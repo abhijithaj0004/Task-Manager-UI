@@ -15,8 +15,6 @@ class HomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // crossAxisAlignment:
-          //     CrossAxisAlignment.center, // Center the child widgets
           children: [
             CircleAvatar(
               radius: 27,

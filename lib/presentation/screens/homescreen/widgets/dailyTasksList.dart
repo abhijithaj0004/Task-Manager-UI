@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:taskmanager/core/constants.dart';
+import 'package:taskmanager/presentation/screens/homescreen/widgets/constants/home_model.dart';
+import 'package:taskmanager/presentation/screens/homescreen/widgets/constants/users_list.dart';
 
 class DailyTasksTile extends StatelessWidget {
   const DailyTasksTile({
@@ -8,10 +11,11 @@ class DailyTasksTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dailyTaskList = HomeModels();
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true, // Ensure the ListView takes only the necessary height
-      itemCount: 4,
+      itemCount: dailyTaskList.dailyTaskList.length,
       itemBuilder: (context, index) {
         return Container(
           margin: EdgeInsets.symmetric(vertical: 10),
@@ -23,48 +27,58 @@ class DailyTasksTile extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(
-                Icons.check_circle_outline_outlined,
-                color: Colors.grey,
-                size: 30,
-              ),
-              Column(
+              Row(
                 children: [
-                  Text('App Animation'),
-                  kHeight10,
-                  Text('---------------')
+                  Icon(
+                    dailyTaskList.dailyTaskList[index]['persent'] == 1.0
+                        ? Icons.check_circle
+                        : Icons.check_circle_outline,
+                    color: dailyTaskList.dailyTaskList[index]['persent'] == 1.0
+                        ? dailyTaskList.dailyTaskList[index]['color']
+                        : Colors.grey,
+                    size: 30,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          dailyTaskList.dailyTaskList[index]['name'],
+                          style: TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      kHeight10,
+                      LinearPercentIndicator(
+                        lineHeight: 10,
+                        width: 200,
+                        backgroundColor: Color.fromARGB(255, 237, 241, 249),
+                        progressColor: dailyTaskList.dailyTaskList[index]
+                            ['color'],
+                        percent: dailyTaskList.dailyTaskList[index]['persent'],
+                        animation: true,
+                        animationDuration: Duration.secondsPerHour,
+                        barRadius: Radius.circular(20),
+                      )
+                    ],
+                  ),
                 ],
               ),
               Row(
                 children: [
                   Container(
                     width: 80,
-                    child: Stack(
-                      children: [
-                        CircleAvatar(
-                          radius: 18,
-                          backgroundColor: Colors.blue,
-                        ),
-                        Positioned(
-                          left: 16,
-                          child: CircleAvatar(
-                            radius: 18,
-                            backgroundColor: Colors.black,
-                          ),
-                        ),
-                        Positioned(
-                          left: 35,
-                          child: CircleAvatar(
-                            radius: 18,
-                            backgroundColor: Colors.red,
-                          ),
-                        ),
-                      ],
+                    child: UsersList(
+                      radius: 15,
+                      dailyTaskList: dailyTaskList,
+                      index: index,
                     ),
                   ),
                   Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: Colors.grey,
+                    size: 20,
                   )
                 ],
               )

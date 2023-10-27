@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taskmanager/presentation/screens/homescreen/home_page.dart';
 import 'package:taskmanager/presentation/screens/main_page.dart';
+import 'package:taskmanager/presentation/screens/projectscreen/project_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
       ),
-      home: HomePage(),
+      home: ProjectScreen(),
     );
   }
 }
