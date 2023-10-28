@@ -6,7 +6,7 @@ import 'package:taskmanager/presentation/pages/dashboardpage/widgets/project_pro
 import 'package:taskmanager/presentation/screens/projectscreen/widgets/users_list.dart';
 
 class DashBoardPage extends StatelessWidget {
-  DashBoardPage(
+  const DashBoardPage(
       {super.key,
       required this.title,
       required this.subTitle,
@@ -27,19 +27,19 @@ class DashBoardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios_new,
               color: Colors.black,
             )),
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.more_vert,
                 color: Colors.black,
               ))
@@ -50,7 +50,7 @@ class DashBoardPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20), color: Colors.white),
               child: Column(
@@ -58,19 +58,21 @@ class DashBoardPage extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 17, fontWeight: FontWeight.bold),
                   ),
                   kHeight10,
                   Text(
                     subTitle,
-                    style: TextStyle(fontSize: 13, color: Colors.grey),
+                    style: const TextStyle(fontSize: 13, color: Colors.grey),
                   ),
                   kHeight20,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       CircularPercentIndicator(
-                        backgroundColor: Color.fromARGB(255, 240, 243, 253),
+                        backgroundColor:
+                            const Color.fromARGB(255, 240, 243, 253),
                         circularStrokeCap: CircularStrokeCap.round,
                         lineWidth: 10,
                         animation: true,
@@ -80,14 +82,14 @@ class DashBoardPage extends StatelessWidget {
                         progressColor: colors,
                         center: Text(
                           persentageTxt,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Team',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 14),
@@ -97,7 +99,7 @@ class DashBoardPage extends StatelessWidget {
                               width: 100,
                               child: UsersListProject(index: index)),
                           kHeight10,
-                          Text(
+                          const Text(
                             'Deadline',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 14),
@@ -105,15 +107,15 @@ class DashBoardPage extends StatelessWidget {
                           kHeight10,
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.calendar_month_outlined,
                                 color: Colors.grey,
                               ),
                               kWidth10,
                               Text(
                                 date,
-                                style:
-                                    TextStyle(fontSize: 12, color: Colors.grey),
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.grey),
                               )
                             ],
                           ),
@@ -130,13 +132,13 @@ class DashBoardPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Project Progress',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   kHeight20,
                   Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white),
@@ -161,18 +163,18 @@ class DashBoardPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         'Project Overview',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       DropdownButton(
                         borderRadius: BorderRadius.circular(10),
-                        hint: Text(
+                        hint: const Text(
                           'Weekly',
                           style: TextStyle(fontSize: 12, color: Colors.grey),
                         ),
-                        items: [],
+                        items: const [],
                         onChanged: (value) {},
                       )
                     ],

@@ -1,26 +1,20 @@
-// import 'package:fl_chart_app/presentation/resources/app_resources.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class Chart extends StatefulWidget {
-  const Chart({super.key});
+class Chart extends StatelessWidget {
+  Chart({super.key});
 
-  @override
-  State<Chart> createState() => _ChartState();
-}
-
-class _ChartState extends State<Chart> {
-  List<Color> gradientColors = [
-    Color.fromARGB(255, 156, 253, 92),
-    Color.fromARGB(33, 156, 253, 92),
+  final List<Color> gradientColors = [
+    const Color.fromARGB(255, 156, 253, 92),
+    const Color.fromARGB(33, 156, 253, 92),
   ];
 
-  bool showAvg = false;
+  final bool showAvg = false;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[
+      children: [
         AspectRatio(
           aspectRatio: 1.70,
           child: Padding(
@@ -35,24 +29,21 @@ class _ChartState extends State<Chart> {
             ),
           ),
         ),
-        SizedBox(
-          width: 60,
-          height: 34,
-          child: TextButton(
-            onPressed: () {
-              setState(() {
-                showAvg = !showAvg;
-              });
-            },
-            child: Text(
-              'avg',
-              style: TextStyle(
-                fontSize: 12,
-                color: showAvg ? Colors.white.withOpacity(0.5) : Colors.white,
-              ),
-            ),
-          ),
-        ),
+        // SizedBox(
+        //   width: 60,
+        //   height: 34,
+        //   child: TextButton(
+        //     onPressed: () {
+        //     },
+        //     child: Text(
+        //       'avg',
+        //       style: TextStyle(
+        //         fontSize: 12,
+        //         color: showAvg ? Colors.white.withOpacity(0.5) : Colors.white,
+        //       ),
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }
@@ -109,10 +100,6 @@ class _ChartState extends State<Chart> {
   }
 
   Widget leftTitleWidgets(double value, TitleMeta meta) {
-    // const style = TextStyle(
-    //   fontWeight: FontWeight.bold,
-    //   fontSize: 15,
-    // );
     String text;
     switch (value.toInt()) {
       case 0:
@@ -132,7 +119,7 @@ class _ChartState extends State<Chart> {
     }
 
     return Text(text,
-        style: TextStyle(
+        style: const TextStyle(
             fontSize: 13, color: Colors.grey, fontWeight: FontWeight.bold),
         textAlign: TextAlign.left);
   }
@@ -143,20 +130,12 @@ class _ChartState extends State<Chart> {
         show: true,
         drawVerticalLine: false,
         horizontalInterval: 1,
-
-        // sverticalInterval: 1,
         getDrawingHorizontalLine: (value) {
           return const FlLine(
             color: Color.fromARGB(255, 235, 243, 233),
             strokeWidth: 1,
           );
         },
-        // getDrawingVerticalLine: (value) {
-        //   return const FlLine(
-        //     color: Colors.green,
-        //     strokeWidth: 1,
-        //   );
-        // },
       ),
       titlesData: FlTitlesData(
         show: true,
@@ -185,7 +164,7 @@ class _ChartState extends State<Chart> {
       ),
       borderData: FlBorderData(
         show: false,
-        // border: Border.all(color: const Color(0xff37434d)),
+        border: Border.all(color: const Color(0xff37434d)),
       ),
       minX: 0,
       maxX: 11,

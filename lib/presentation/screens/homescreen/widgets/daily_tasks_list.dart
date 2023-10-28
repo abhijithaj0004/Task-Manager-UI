@@ -18,8 +18,8 @@ class DailyTasksTile extends StatelessWidget {
       itemCount: dailyTaskList.dailyTaskList.length,
       itemBuilder: (context, index) {
         return Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          padding: EdgeInsets.all(20),
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -45,7 +45,7 @@ class DailyTasksTile extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 10.0),
                         child: Text(
                           dailyTaskList.dailyTaskList[index]['name'],
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -53,13 +53,13 @@ class DailyTasksTile extends StatelessWidget {
                       LinearPercentIndicator(
                         lineHeight: 10,
                         width: 200,
-                        backgroundColor: Color.fromARGB(255, 237, 241, 249),
+                        backgroundColor: const Color.fromARGB(255, 237, 241, 249),
                         progressColor: dailyTaskList.dailyTaskList[index]
                             ['color'],
                         percent: dailyTaskList.dailyTaskList[index]['persent'],
                         animation: true,
                         animationDuration: Duration.secondsPerHour,
-                        barRadius: Radius.circular(20),
+                        barRadius: const Radius.circular(20),
                       )
                     ],
                   ),
@@ -67,7 +67,7 @@ class DailyTasksTile extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 80,
                     child: UsersList(
                       radius: 15,
@@ -75,7 +75,7 @@ class DailyTasksTile extends StatelessWidget {
                       index: index,
                     ),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.arrow_forward_ios_outlined,
                     color: Colors.grey,
                     size: 20,

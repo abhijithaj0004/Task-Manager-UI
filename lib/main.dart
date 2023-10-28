@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:taskmanager/presentation/screens/homescreen/home_page.dart';
+import 'package:provider/provider.dart';
+import 'package:taskmanager/application/tab_provider.dart';
 import 'package:taskmanager/presentation/screens/main_page.dart';
-import 'package:taskmanager/presentation/screens/projectscreen/project_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Montserrat',
+    return ChangeNotifierProvider(
+      create: (context) => TabProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: 'Montserrat',
+        ),
+        home: const MainPage(),
       ),
-      home: ProjectScreen(),
     );
   }
 }

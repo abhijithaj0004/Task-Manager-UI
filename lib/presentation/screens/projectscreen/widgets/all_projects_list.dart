@@ -3,8 +3,6 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:taskmanager/core/constants.dart';
 import 'package:taskmanager/presentation/pages/dashboardpage/dashboard_page.dart';
 import 'package:taskmanager/presentation/screens/homescreen/widgets/constants/home_model.dart';
-import 'package:taskmanager/presentation/screens/homescreen/widgets/constants/users_list.dart';
-import 'package:taskmanager/presentation/screens/homescreen/widgets/dailyTasksList.dart';
 import 'package:taskmanager/presentation/screens/projectscreen/widgets/models/project_models.dart';
 import 'package:taskmanager/presentation/screens/projectscreen/widgets/users_list.dart';
 
@@ -33,8 +31,8 @@ class AllProjectsList extends StatelessWidget {
             ));
           },
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 10),
-            padding: EdgeInsets.all(20),
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(20)),
             child: Row(
@@ -45,15 +43,15 @@ class AllProjectsList extends StatelessWidget {
                   children: [
                     Text(
                       projectModels.dailyTaskList[index]['name'],
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     kHeight10,
                     Text(
                       projectModels.dailyTaskList[index]['subtitle'],
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                      style: const TextStyle(fontSize: 12, color: Colors.grey),
                     ),
                     kHeight20,
-                    Text('Team'),
+                    const Text('Team'),
                     kHeight10,
                     SizedBox(
                       width: 100,
@@ -64,21 +62,21 @@ class AllProjectsList extends StatelessWidget {
                     kHeight20,
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.calendar_month_outlined,
                           color: Colors.grey,
                         ),
                         kWidth10,
                         Text(
                           projectModels.dailyTaskList[index]['date'],
-                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                          style: const TextStyle(fontSize: 12, color: Colors.grey),
                         )
                       ],
                     )
                   ],
                 ),
                 CircularPercentIndicator(
-                  backgroundColor: Color.fromARGB(255, 240, 243, 253),
+                  backgroundColor: const Color.fromARGB(255, 240, 243, 253),
                   circularStrokeCap: CircularStrokeCap.round,
                   lineWidth: 8,
                   animation: true,
@@ -88,7 +86,7 @@ class AllProjectsList extends StatelessWidget {
                   progressColor: projectModels.dailyTaskList[index]['color'],
                   center: Text(
                     projectModels.dailyTaskList[index]['presentagetext'],
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                 )
               ],

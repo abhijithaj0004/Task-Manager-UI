@@ -11,7 +11,7 @@ class HomeModels {
     {
       'name': 'In Progress',
       'color': const Color.fromARGB(187, 255, 185, 86),
-      'icon': Icon(
+      'icon': const Icon(
         Icons.timer_outlined,
         color: Colors.white,
         size: 30,
@@ -20,7 +20,7 @@ class HomeModels {
     {
       'name': 'Ongoing',
       'color': const Color.fromARGB(161, 123, 133, 249),
-      'icon': Icon(
+      'icon': const Icon(
         Icons.shuffle_outlined,
         color: Colors.white,
         size: 30,
@@ -29,7 +29,7 @@ class HomeModels {
     {
       'name': 'Completed',
       'color': const Color.fromARGB(120, 149, 246, 70),
-      'icon': Icon(
+      'icon': const Icon(
         Icons.check_box_outlined,
         color: Colors.white,
         size: 30,
@@ -38,7 +38,7 @@ class HomeModels {
     {
       'name': 'Cancel',
       'color': const Color.fromARGB(225, 249, 126, 64),
-      'icon': Icon(
+      'icon': const Icon(
         Icons.cancel_outlined,
         color: Colors.white,
         size: 30,
@@ -68,7 +68,7 @@ class HomeModels {
     },
     {
       'name': 'UI/UX Design',
-      'color': Color.fromARGB(160, 249, 126, 64),
+      'color': const Color.fromARGB(160, 249, 126, 64),
       'persent': 0.5,
       'users': [
         'assets/images/pexels-pixabay-220453.jpg',

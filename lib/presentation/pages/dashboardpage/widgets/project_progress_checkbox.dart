@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProjectProgressCheckbox extends StatelessWidget {
-  ProjectProgressCheckbox({
+  const ProjectProgressCheckbox({
     super.key,
     required this.title,
     required this.isCompleted,
@@ -14,8 +14,8 @@ class ProjectProgressCheckbox extends StatelessWidget {
     return Row(
       children: [
         Checkbox(
-          side: BorderSide(
-            color: const Color.fromARGB(161, 123, 133, 249),
+          side: const BorderSide(
+            color: Color.fromARGB(161, 123, 133, 249),
           ),
           activeColor: const Color.fromARGB(161, 123, 133, 249),
           value: isCompleted,

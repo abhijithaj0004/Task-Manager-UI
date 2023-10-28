@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:taskmanager/core/constants.dart';
 import 'package:taskmanager/presentation/screens/homescreen/widgets/constants/home_model.dart';
-import 'package:taskmanager/presentation/screens/homescreen/widgets/dailyTasksList.dart';
+import 'package:taskmanager/presentation/screens/homescreen/widgets/daily_tasks_list.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                 height: 45,
               ),
             ),
-            Icon(
+          const  Icon(
               Icons.search_outlined,
               color: Colors.grey,
             ),
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -66,8 +66,8 @@ class HomePage extends StatelessWidget {
                     SizedBox(
                       height: 300,
                       child: GridView.builder(
-                        physics: NeverScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           childAspectRatio: 1.5,
                           crossAxisCount: 2,
                           mainAxisSpacing: 15,
@@ -86,7 +86,7 @@ class HomePage extends StatelessWidget {
                                 kHeight20,
                                 Text(
                                   homeModel.dashBoardlist[index]['name'],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 18, color: Colors.white),
                                 )
                               ],
@@ -96,10 +96,10 @@ class HomePage extends StatelessWidget {
                         itemCount: homeModel.dashBoardlist.length,
                       ),
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Daily Task',
                           style: TextStyle(
                             fontSize: 20,
@@ -108,7 +108,7 @@ class HomePage extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            const Text(
+                            Text(
                               'All Task',
                               style: TextStyle(
                                 fontSize: 15,
@@ -124,7 +124,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     kHeight20,
-                    DailyTasksTile(),
+                    const DailyTasksTile(),
                   ],
                 ),
               ],

@@ -36,8 +36,6 @@ class UsersListProject extends StatelessWidget {
         const Positioned(
           left: 45,
           child: CircleAvatar(
-            // backgroundImage:
-            //     AssetImage(dailyTaskList.dailyTaskList[index]['users'][0]),
             radius: 15,
             backgroundColor: Color.fromARGB(253, 249, 190, 102),
             child: Center(
