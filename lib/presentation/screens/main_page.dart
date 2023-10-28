@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:taskmanager/application/tab_provider.dart';
+import 'package:taskmanager/domain/tab_provider.dart';
 import 'package:taskmanager/presentation/screens/homescreen/home_page.dart';
 import 'package:taskmanager/presentation/screens/messagescreen/message_screen.dart';
 import 'package:taskmanager/presentation/screens/projectscreen/project_screen.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taskmanager/core/constants.dart';
 import 'package:taskmanager/presentation/screens/homescreen/widgets/constants/home_model.dart';
 import 'package:taskmanager/presentation/screens/homescreen/widgets/daily_tasks_list.dart';
@@ -24,9 +25,10 @@ class HomePage extends StatelessWidget {
                 height: 45,
               ),
             ),
-          const  Icon(
-              Icons.search_outlined,
-              color: Colors.grey,
+            SvgPicture.asset(
+              'assets/icons/search.svg',
+              // ignore: deprecated_member_use
+              color: const Color.fromARGB(255, 135, 135, 135),
             ),
           ],
         ),
@@ -67,7 +69,8 @@ class HomePage extends StatelessWidget {
                       height: 300,
                       child: GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           childAspectRatio: 1.5,
                           crossAxisCount: 2,
                           mainAxisSpacing: 15,

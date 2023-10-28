@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:taskmanager/core/constants.dart';
 import 'package:taskmanager/presentation/screens/projectscreen/widgets/all_projects_list.dart';
 
 class ProjectScreen extends StatelessWidget {
- const ProjectScreen({super.key});
+  const ProjectScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,9 +24,10 @@ class ProjectScreen extends StatelessWidget {
                   height: 45,
                 ),
               ),
-              const Icon(
-                Icons.search_outlined,
-                color: Colors.grey,
+              SvgPicture.asset(
+                'assets/icons/search.svg',
+                // ignore: deprecated_member_use
+                color: const Color.fromARGB(255, 135, 135, 135),
               ),
             ],
           ),
@@ -53,14 +55,14 @@ class ProjectScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                     color: const Color.fromARGB(161, 123, 133, 249),
                   ),
-                  tabs:const [
-                     Tab(
+                  tabs: const [
+                    Tab(
                       child: Text('All'),
                     ),
-                     Tab(
+                    Tab(
                       child: Text('Ongoing'),
                     ),
-                     Tab(
+                    Tab(
                       child: Text('Completed'),
                     )
                   ],
@@ -68,12 +70,11 @@ class ProjectScreen extends StatelessWidget {
               ),
               kHeight20,
               Expanded(
-                child: TabBarView(
-                    children: [
-                      AllProjectsList(),
-                      const Center(child: Text('Ongoing')),
-                      const Center(child: Text('Completed')),
-                    ]),
+                child: TabBarView(children: [
+                  AllProjectsList(),
+                  const Center(child: Text('Ongoing')),
+                  const Center(child: Text('Completed')),
+                ]),
               )
             ],
           ),
