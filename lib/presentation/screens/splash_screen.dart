@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:taskmanager/presentation/screens/authentication/auth.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -14,6 +15,10 @@ class SplashScreen extends StatelessWidget {
                 image: AssetImage('assets/images/background.jpg'),
                 opacity: 200,
                 fit: BoxFit.cover)),
+        child: Center(
+          child:
+              Lottie.asset('assets/animation/loading-carga.json', height: 200),
+        ),
       ),
     );
   }

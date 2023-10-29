@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taskmanager/core/constants.dart';
@@ -18,13 +20,17 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CircleAvatar(
-              radius: 27,
-              backgroundColor: const Color.fromARGB(255, 232, 228, 250),
-              child: Image.asset(
-                'assets/images/Modified-Bitmoji.png',
-                height: 45,
-              ),
-            ),
+                radius: 27,
+                backgroundColor: const Color.fromARGB(255, 232, 228, 250),
+                child: FirebaseAuth.instance.currentUser!.photoURL == null
+                    ? Image.asset(
+                        'assets/images/Modified-Bitmoji.png',
+                        height: 45,
+                      )
+                    : Image.network(
+                        FirebaseAuth.instance.currentUser!.photoURL ?? '',
+                        height: 50,
+                      )),
             SvgPicture.asset(
               'assets/icons/search.svg',
               // ignore: deprecated_member_use
@@ -57,8 +63,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     kHeight10,
-                    const Text(
-                      'Alex Marconi',
+                    Text(
+                      FirebaseAuth.instance.currentUser!.displayName ?? "User",
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,

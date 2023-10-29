@@ -20,7 +20,7 @@ class UsersList extends StatelessWidget {
           backgroundImage:
               AssetImage(dailyTaskList.dailyTaskList[index]['users'][1]),
           radius: radius,
-          backgroundColor: Colors.blue,
+          backgroundColor: Color.fromARGB(81, 182, 87, 255),
         ),
         Positioned(
           left: 16,
@@ -28,7 +28,7 @@ class UsersList extends StatelessWidget {
             backgroundImage:
                 AssetImage(dailyTaskList.dailyTaskList[index]['users'][2]),
             radius: radius,
-            backgroundColor: Colors.black,
+            backgroundColor: Color.fromARGB(69, 250, 163, 64),
           ),
         ),
         Positioned(
@@ -37,7 +37,7 @@ class UsersList extends StatelessWidget {
             backgroundImage:
                 AssetImage(dailyTaskList.dailyTaskList[index]['users'][0]),
             radius: radius,
-            backgroundColor: Colors.red,
+            backgroundColor: Color.fromARGB(106, 111, 244, 54),
           ),
         ),
       ],

@@ -37,6 +37,8 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.8
   font_awesome_flutter: ^10.6.0
+  google_sign_in: ^6.1.5
+  lottie: ^2.7.0
   percent_indicator: ^4.2.3
   provider: ^6.0.5
 
@@ -59,6 +61,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/animation/
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware
     # For details regarding adding assets from package dependencies, see
