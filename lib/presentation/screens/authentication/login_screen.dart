@@ -129,7 +129,7 @@ class LoginScreen extends StatelessWidget {
                     AuthFn().signInWithGoogle();
                   },
                   child: Container(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         border: Border.all(
                             color: const Color.fromARGB(255, 210, 210, 210)),
@@ -153,14 +153,14 @@ class LoginScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account?"),
+                    const Text("Don't have an account?"),
                     InkWell(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => SignUpScreen(),
                         ));
                       },
-                      child: Text(
+                      child: const Text(
                         'SignUp',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -176,7 +176,7 @@ class LoginScreen extends StatelessWidget {
                       builder: (context) => ForgotPassWordPage(),
                     ));
                   },
-                  child: Text(
+                  child: const Text(
                     'Forgot Password?',
                     style: TextStyle(
                         fontSize: 14,

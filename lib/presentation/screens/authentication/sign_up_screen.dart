@@ -1,15 +1,4 @@
-// import 'package:flutter/material.dart';
 
-// class SignUpScreen extends StatelessWidget {
-//   const SignUpScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Scaffold(
-//     body: Column(children: [],),
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taskmanager/application/functions/auth_functions.dart';
@@ -31,7 +20,7 @@ class SignUpScreen extends StatelessWidget {
             child: Form(
               key: fomrKey,
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/images/background.jpg'),
                         fit: BoxFit.cover,
@@ -45,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
                     Lottie.asset('assets/animation/singing-contract.json',
                         height: 300),
 
-                    Text('Sign Up and Continue',
+                    const Text('Sign Up and Continue',
                         style: TextStyle(
                             fontSize: 22,
                             color: Color.fromARGB(255, 54, 54, 54))),
@@ -66,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         hintText: 'Enter Your Name',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             fontSize: 22,
                             color: Color.fromARGB(255, 140, 140, 140)),
                       ),
@@ -87,7 +76,7 @@ class SignUpScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           hintText: 'Enter Your Email',
-                          hintStyle: TextStyle(
+                          hintStyle: const TextStyle(
                               fontSize: 22,
                               color: Color.fromARGB(255, 140, 140, 140))),
                     ),
@@ -116,7 +105,7 @@ class SignUpScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           hintText: 'Enter Password',
-                          hintStyle: TextStyle(
+                          hintStyle: const TextStyle(
                               fontSize: 22,
                               color: Color.fromARGB(255, 140, 140, 140)),
                         )),
@@ -138,7 +127,7 @@ class SignUpScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         hintText: 'Confirm Password',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             fontSize: 22,
                             color: Color.fromARGB(255, 140, 140, 140)),
                       ),
@@ -155,11 +144,11 @@ class SignUpScreen extends StatelessWidget {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.all(15),
+                          padding: const EdgeInsets.all(15),
                           decoration: BoxDecoration(
                               color: const Color.fromARGB(161, 123, 133, 249),
                               borderRadius: BorderRadius.circular(20)),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               'Sign Up',
                               style:
@@ -171,7 +160,7 @@ class SignUpScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Already have an Account?',
+                        const Text('Already have an Account?',
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 129, 129, 129))),
@@ -179,7 +168,7 @@ class SignUpScreen extends StatelessWidget {
                           onTap: () {
                             Navigator.pop(context);
                           },
-                          child: Text(' Sign In',
+                          child: const Text(' Sign In',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 112, 124, 250),

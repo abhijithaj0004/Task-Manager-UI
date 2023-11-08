@@ -1,15 +1,4 @@
-// import 'package:flutter/material.dart';
 
-// class ForgotPassword extends StatelessWidget {
-//   const ForgotPassword({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Scaffold(
-
-//     );
-//   }
-// }
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taskmanager/application/functions/auth_functions.dart';
@@ -31,7 +20,7 @@ class ForgotPassWordPage extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             )),
@@ -50,7 +39,7 @@ class ForgotPassWordPage extends StatelessWidget {
                     height: 100,
                   ),
                   kHeight20,
-                  Text(
+                  const Text(
                     'Enter your Email and we will send you a Password reset link',
                     style: TextStyle(
                       fontSize: 20,
@@ -73,7 +62,7 @@ class ForgotPassWordPage extends StatelessWidget {
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10)),
                         hintText: 'Enter Email',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             fontSize: 22,
                             color: Color.fromARGB(255, 140, 140, 140))),
                   ),
